@@ -28,9 +28,35 @@ public class Anagram {
 	}  
 
 	// Returns true if the two given strings are anagrams, false otherwise.
-	public static boolean isAnagram(String str1, String str2) {
-		// Replace the following statement with your code
-		return false;
+		public static boolean isAnagram(String str1, String str2) 
+		{
+		String all = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		String str1Big = str1.toUpperCase().replaceAll("\\s+", "");;
+		String str2Big = str2.toUpperCase().replaceAll("\\s+", "");;
+		if(str1Big.length() != str2Big.length())
+		{
+			return false;
+		}
+			for(int i = 0; i<all.length(); i++)
+			{
+			
+				if(str1Big.indexOf(all.charAt(i)) != -1)
+				{
+					if(str2Big.indexOf(all.charAt(i)) == -1)
+					{
+						return false;
+					}
+				}
+				if(str2Big.indexOf(all.charAt(i)) != -1)
+				{
+					if(str1Big.indexOf(all.charAt(i)) == -1)
+					{
+						return false;
+					}
+				}
+			}
+		return true;
+	
 	}
 	   
 	// Returns a preprocessed version of the given string: all the letter characters are converted
