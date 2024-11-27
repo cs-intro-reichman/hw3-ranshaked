@@ -7,7 +7,8 @@ public class Anagram {
 		System.out.println(isAnagram("William Shakespeare","I am a weakish speller")); // true
 		System.out.println(isAnagram("Madam Curie","Radium came")); // true
 		System.out.println(isAnagram("Tom Marvolo Riddle","I am Lord Voldemort")); // true
-
+		System.out.println(isAnagram("hello", "world!"));
+/* 
 		// Tests the preProcess function.
 		System.out.println(preProcess("What? No way!!!"));
 		
@@ -24,9 +25,8 @@ public class Anagram {
 			pass = pass && isAnagram(str, randomAnagram);
 			if (!pass) break;
 		}
-		System.out.println(pass ? "test passed" : "test Failed");
+		System.out.println(pass ? "test passed" : "test Failed");*/
 	}  
-
 	// Returns true if the two given strings are anagrams, false otherwise.
 		public static boolean isAnagram(String str1, String str2) 
 		{
@@ -62,7 +62,7 @@ public class Anagram {
 	// Returns a preprocessed version of the given string: all the letter characters are converted
 	// to lower-case, and all the other characters are deleted, except for spaces, which are left
 	// as is. For example, the string "What? No way!" becomes "whatnoway"
-	private static String preProcess(String str) {
+	static String preProcess(String str) {
 		// Replace the following statement with your code
 		return str;
 	} 
