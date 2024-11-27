@@ -1,4 +1,4 @@
-    public class TestAnagram {
+public class TestAnagram {
     private static int totalTests = 0;
     private static int passedTests = 0;
 
@@ -21,7 +21,7 @@
         System.out.println("Test 1 (basic anagram): " + (test1 ? "PASS" : "FAIL"));
         
         // Test case 2: Different lengths
-        boolean test2 = Anagram.isAnagram("hello", "world!");
+        boolean test2 = !Anagram.isAnagram("hello", "world!");
         System.out.println("Test 2 (different lengths): " + (test2 ? "PASS" : "FAIL"));
         
         // Test case 4: Empty strings
@@ -98,4 +98,3 @@
         return passed;
     }
 } 
-    
