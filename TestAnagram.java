@@ -1,4 +1,4 @@
-/*public class TestAnagram {
+    public class TestAnagram {
     private static int totalTests = 0;
     private static int passedTests = 0;
 
@@ -98,4 +98,4 @@
         return passed;
     }
 } 
-    */
+    

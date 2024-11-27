@@ -9,7 +9,7 @@ public class LoanCalc {
     // interest rate (double, as a percentage), and number of payments (int).  
 	public static void main(String[] args) {		
 		// Gets the loan data
-		/*double loan = Double.parseDouble(args[0]);
+		double loan = Double.parseDouble(args[0]);
 		double rate = Double.parseDouble(args[1]);
 		int n = Integer.parseInt(args[2]);
 		System.out.println("Loan = " + loan + ", interest rate = " + rate + "%, periods = " + n);
@@ -29,11 +29,7 @@ public class LoanCalc {
 		System.out.println((int) bisectionSolver(loan, rate, n, epsilon));
 		System.out.println("number of iterations: " + iterationCounter);
 	}
-	*/
-	System.out.println(endBalance(100000, 5, 10,12327.5626));
-	System.out.println(bruteForceSolver(100000,5,10,1));
-	System.out.println(bisectionSolver(100000,5,10,1));
-	}
+	
 
 	// Computes the ending balance of a loan, given the loan amount, the periodical
 	// interest rate (as a percentage), the number of periods (n), and the periodical payment.
@@ -92,8 +88,10 @@ public class LoanCalc {
             }
         }
 		return g;  
+	
+	 }
 	}
 
-}
+
 
 
