@@ -54,7 +54,7 @@ public class LoanCalc {
 		double num = loan;
 		while(epsilon < num)
 		{
-			payment = payment + 0.01;
+			payment = payment + epsilon;
 			num = endBalance(loan,rate,n,payment);
 		}
 		return payment;
@@ -75,7 +75,6 @@ public class LoanCalc {
 		{
             g = (L + H) / 2;  
             double fG = endBalance(loan, rate, n, g); 
-
             if (fG == 0) 
 			{
                 break; 
