@@ -83,12 +83,10 @@ public class Anagram {
 		while(i>-1)
 		{
 			int j =(int)(Math.random()*str.length());
-			 System.out.println(j);
 			 str1.setCharAt(j,str.charAt(i));
 			 i--; 
 		}
 		// Replace the following statement with your code
-		System.out.println(str1);
 		return str1.toString();
 	}
 }
