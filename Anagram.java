@@ -23,12 +23,14 @@ public class Anagram {
 			if (!pass) break;
 		}
 		System.out.println(pass ? "test passed" : "test Failed");
+		String aaa = Anagram.preProcess("Hello World!");
+		System.out.println(aaa);
 	} 
 		public static boolean isAnagram(String str1, String str2) 
 		{
 		String all = "abcdefghigklmnopqrstuvwxyz";
-		String str1Big = preProcess(str1);
-		String str2Big = preProcess(str2);
+		String str1Big =str1.replaceAll("[^a-zA-Z]", "").toLowerCase();
+		String str2Big =str2.replaceAll("[^a-zA-Z]", "").toLowerCase();
 		if(str1Big.length() != str2Big.length())
 		{
 			return false;
@@ -54,8 +56,11 @@ public class Anagram {
 		return true;
 	}
 	static String preProcess(String str) {
-		 String str1 =str.toLowerCase().replaceAll("[^a-z] ", "");
-		return str1;
+		if(str.length()>0)
+		{
+		return str.replaceAll("[^a-zA-Z ]", "").toLowerCase();
+		}
+		return str;
 	} 
 	public static String randomAnagram(String str) {
 		str = preProcess(str);
