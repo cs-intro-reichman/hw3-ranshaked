@@ -53,7 +53,7 @@ public class LoanCalc {
 		while(0 < num)
 		{
 			num = endBalance(loan,rate,n,payment);
-			payment = payment + epsilon;
+			payment = payment + 0.001;
 		}
 		return payment;
     }
@@ -66,27 +66,27 @@ public class LoanCalc {
 	 {  
 		double L = loan / n;  
         double H = loan * (1 + rate / 100);  
-        double g = 0; 
-        double fL = endBalance(loan, rate, n, L);
-
-        while ((H - L) > epsilon) 
-		{
-            g = (L + H) / 2;  
-            double fG = endBalance(loan, rate, n, g); 
-            if (fG == 0) 
-			{
-                break; 
-            } else if (fL * fG > 0)
-			 {
-                L = g;  
+        
+        double fL = endBalance(loan, rate, n, L);  
+        double fH = endBalance(loan, rate, n, H); 
+        if (fL <= 0 || fH >= 0) {
+        }
+        iterationCounter = 0;
+        while (H - L > epsilon) {
+            double g = (L + H) / 2; 
+            double fG = endBalance(loan, rate, n, g);  
+            iterationCounter++;  
+            if (Math.abs(fG) <= epsilon) {
+                return g;
+            } else if (fL * fG > 0) {
+                L = g;
                 fL = fG;
             } else {
-                H = g;  
+                H = g;
             }
         }
-		return g;  
-	
-	 }
+        return (L + H) / 2;
+    }
 	}
 
 
