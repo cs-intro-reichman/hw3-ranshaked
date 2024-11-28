@@ -1,12 +1,9 @@
 
 public class LoanCalc {
 	
-	static double epsilon = 0.001;  // Approximation accuracy
-	static int iterationCounter;    // Number of iterations 
-	
-	// Gets the loan data and computes the periodical payment.
-    // Expects to get three command-line arguments: loan amount (double),
-    // interest rate (double, as a percentage), and number of payments (int).  
+	static double epsilon = 0.001;  
+	static int iterationCounter;    
+
 	public static void main(String[] args) {		
 		// Gets the loan data
 		double loan = Double.parseDouble(args[0]);
@@ -17,7 +14,6 @@ public class LoanCalc {
 		// Computes the ending balance of the loan, given a periodical payment
 		double payment = 10000;
 		double endBalance = endBalance(loan, rate, n, payment);
-		System.out.println("If your periodical payment is " + payment + ", your ending balance is: " + (int) endBalance);
 		
 		// Computes the periodical payment using brute force search
 		System.out.print("\nPeriodical payment, using brute force: ");
